@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react'
+import Navbars from '../../Components/Navbars'
 import axios from "axios";
 import { NavLink } from "react-router-dom";
 
-
-export default function Ventas(){
+const Ventas = () => {
 
     function handleOnsubmit(e){
         e.preventDefault();
@@ -42,10 +42,12 @@ export default function Ventas(){
         
     }
 
-
-    return(
-        <div className="container">
-            <div className="row">          
+    return (
+        
+            
+        <div className="">
+            <div className="row-fluid">       
+            <Navbars/>   
                 <div className="col-md-10 mx-auto">         
                     <div className="pt-3">
                         <div>
@@ -165,3 +167,4 @@ export default function Ventas(){
     )
 }
 
+export default Ventas

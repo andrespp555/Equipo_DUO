@@ -1,6 +1,7 @@
 import React, { useState } from "react"
-import { useEffect } from "react";
+import Navbars from '../../Components/Navbars'
 import axios from "axios";
+import { useEffect } from "react";
 import { FaTrashAlt, FaPenAlt } from 'react-icons/fa';
 
 export default function BuscarUsu(){
@@ -43,8 +44,9 @@ export default function BuscarUsu(){
     }
     
     return(
-        <div className="container">
-            <div className="row">
+        <div className="">
+            <div className="row-fluid">
+            <Navbars/>
                 <div className="col-md-10 mx-auto">         
                     <div className="pt-3">
                         <div>
@@ -168,4 +170,3 @@ export default function BuscarUsu(){
         </div>
     )
 }
-

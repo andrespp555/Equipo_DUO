@@ -2,7 +2,10 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const VentaSchame = Schema({
-    idventa: Number,
+    idventa: {
+        type: Number,
+        unique: true
+    },
     fecha: { type: Date, default: Date.now },
     producto: {
         p1: String,

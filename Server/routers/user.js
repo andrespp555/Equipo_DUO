@@ -2,6 +2,7 @@ const express = require("express");
 const UserController = require("../controllers/user");
 const ProdController = require("../controllers/producto");
 const ventaController = require("../controllers/venta");
+const validarController = require("../controllers/validar");
 
 const api = express.Router();
 //usuario
@@ -19,5 +20,7 @@ api.post("/venta/agregar", ventaController.add_venta);
 api.get("/venta/listar", ventaController.list_venta);
 api.delete("/venta/borrar/:id", ventaController.delete_venta);
 api.put("/venta/actualizar", ventaController.update_venta);
+//validar
+api.get("/login/:email", validarController.find_user);
 
 module.exports = api;

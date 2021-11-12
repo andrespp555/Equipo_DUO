@@ -1,0 +1,7 @@
+body {
+  background-image: url("../Imagenes/fondo.png");
+  }
+
+.text-shadow {
+    text-shadow: 0 0 6px #80d5f7;
+  }

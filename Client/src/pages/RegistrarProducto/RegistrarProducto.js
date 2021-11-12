@@ -1,6 +1,6 @@
 import React from "react";
 import axios from "axios";
-
+import Navbars from '../../Components/Navbars';
 export default function RegistrarProducto(){
 
     function handleOnsubmit(e){
@@ -19,9 +19,9 @@ export default function RegistrarProducto(){
     }
 
     return(
-        <div className="container">
-            <div className="row">
-            
+        <div className="">
+            <div className="row-fluid">
+            <Navbars/>
                 <div className="col-md-10 mx-auto">         
                     <div className="pt-3">
                         <h3>Módulo Productos</h3>

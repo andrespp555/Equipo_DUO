@@ -8,8 +8,6 @@ const UserSchame = Schema({
         type: String,
         unique: true
     },
-    password: String,
-    repeatPassword: String,
     role: String,
     active: String
 });

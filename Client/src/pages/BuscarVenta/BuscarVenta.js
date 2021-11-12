@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { FaTrashAlt, FaPenAlt } from 'react-icons/fa';
 import { useEffect } from "react";
-
+import Navbars from '../../Components/Navbars';
 
 export default function BuscarVenta(){
     //list
@@ -21,6 +21,7 @@ export default function BuscarVenta(){
         })
     }
     //Update
+    const [id_venta, set_id_venta] = useState(0);
     const [id_v, set_id] = useState(0);
     const [p1_venta, set_p1_venta] = useState("");
     const [p2_venta, set_p2_venta] = useState("");
@@ -63,8 +64,9 @@ export default function BuscarVenta(){
         })
     }
     return(
-        <div className="container">
-            <div className="row">
+        <div className="">
+            <div className="row-fluid">
+            <Navbars/>
                 <div className="col-md-10 mx-auto">         
                     <div className="pt-3">
                         <div>
@@ -103,6 +105,7 @@ export default function BuscarVenta(){
                                         <td>
                                         <button className="btn btn-success" onClick = {() => { 
                                             set_id(value._id);
+                                            set_id_venta(value.idventa);
                                             set_p1_venta(value.producto.p1);
                                             set_p2_venta(value.producto.p2);
                                             set_p3_venta(value.producto.p3);
@@ -117,6 +120,7 @@ export default function BuscarVenta(){
                                             set_v4_venta(value.valor.v4);
                                             set_tot_venta(value.total);
                                             set_est_venta(value.estado);
+                                            document.getElementById('idventa').defaultValue = value.idventa;
                                             document.getElementById('producto1').defaultValue = value.producto.p1;
                                             document.getElementById('producto2').defaultValue = value.producto.p2;
                                             document.getElementById('producto3').defaultValue = value.producto.p3;
@@ -158,7 +162,7 @@ export default function BuscarVenta(){
                             </tr>
                             <tr>
                                 <td>
-                                    <input type="text" placeholder="Id Venta" className="form-control form-control-sm"/>
+                                    <input type="text" placeholder="Id Venta" className="form-control form-control-sm" name="idventa" id="idventa" disabled onChange={(e) => {set_id_venta(e.target.value);}}/>
                                 </td>
                                 <td>
                                     <select className="form-control form-control-sm" name="estado" id="estado" onChange={(e) => {set_est_venta(e.target.value);}}>
@@ -237,6 +241,7 @@ export default function BuscarVenta(){
                             </tbody>
                             <div className="input-group mb-3">
                                     <button className="btn btn-success" onClick={() => {update_venta(id_v)}}>Actualizar</button>
+                                    
                             </div>
                         </table>
                         </form>
